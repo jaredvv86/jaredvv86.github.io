@@ -3,9 +3,9 @@
 Copyright Holder and License
 **************************************************************************************************
 GRAMPS Cascading Style Sheet
-Style Name: Basic-Spruce Stylesheet
+Style Name: Basic-Ash Stylesheet
 Style Author: Jason M. Simanek (2008)
-Note: Adapted from GRAMPS original Modern Style stylesheet with a new blue color scheme.
+Note: Adapted from GRAMPS original Modern Style stylesheet
 **************************************************************************************************
 This website was created with GRAMPS <http://www.gramps-project.org/>
 --------------------------------------------------------------------------------------------------
@@ -40,10 +40,10 @@ Color Palette
 --------------------------------------------------------------------------------------------------
 
 black                   #000
-blue dark               #204D91
-blue                    #7CA3DD
-blue light              #BFD0EA
-blue very light         #EAEEF4
+gray dark               #555
+gray                    #999
+gray light              #CCC
+gray very light         #EEE
 white                   #FFF
 --------------------------------------------------------------------------------------------------
 Characteristic of this style is that it uses the full width of the browser
@@ -63,14 +63,14 @@ body {
     font-size: 90%;
     color: black;
     margin: 0px;
-    background-color: #EAEEF4;
+    background-color: #EEE;
 }
 body > div {
     clear: both;
 }
 .content {
-    background-color: #FFF;
-    border-top: solid 1px #7CA3DD;
+    background-color: white;
+    border-top: solid 1px #999;
 }
 .content div.snapshot {
     float: right;
@@ -93,11 +93,10 @@ h3 {
 }
 h4 {
     font-size: medium;
-    color: #204D91;
-    background-color: #BFD0EA;
+    background-color: #CCC;
     padding-left: 15px;
     margin-bottom: 0px;
-    border-bottom: solid 1px #7CA3DD;
+    border-bottom: solid 1px #999;
 }
 p#description {
     padding-left: 15px;
@@ -107,18 +106,18 @@ a {
     text-decoration: none;
 }
 a[href]:hover, a[href]:active {
-    background-color: #EAEEF4
+    text-decoration: underline;
 }
 .grampsid {
     font-family: monospace;
     font-size: smaller;
-    color: #7CA3DD;
+    color: #999;
 }
 
 /* Header
 ----------------------------------------------------- */
 #SiteTitle {
-    color: #204D91;
+    color: #555;
 }
 #user_header, #user_footer {
     padding-left: 15px;
@@ -127,7 +126,7 @@ a[href]:hover, a[href]:active {
 /* Navigation
 ----------------------------------------------------- */
 div#nav, #subnavigation {
-    border: solid 1px #EAEEF4; /* needed by IE7 */
+    border: solid 1px #EEE; /* needed by IE7 */
 }
 #subnavigation ul {
     overflow: hidden;
@@ -138,7 +137,7 @@ div#nav ul, #subnavigation ul {
     padding-left: 15px;
 }
 #subnavigation ul {
-    border-bottom: solid 1px #7CA3DD;
+    border-bottom: solid 1px #999;
 }
 div#nav ul li, #subnavigation ul li {
     float: left;
@@ -148,28 +147,27 @@ div#nav ul li a, #subnavigation ul li a {
     font-size: smaller;
     font-weight: bold;
     padding: 5px;
-    border-bottom: solid 1px #EAEEF4;
+    border-bottom: solid 1px #EEE;
 }
 div#nav ul li a:hover, #subnavigation ul li a:hover {
     text-decoration: none;
-    background-color: #BFD0EA;
+    background-color: #CCC;
     border-bottom: solid 1px black;
 }
 div#nav ul li.CurrentSection a {
     position: relative;
     top: 1px;
-    border: solid 1px #7CA3DD;
+    border: solid 1px #999;
     border-bottom-style: none;
-    background-color: #FFF;
+    background-color: white;
 }
 #subnavigation ul li.CurrentSection a {
-    background-color: #FFF;
+    background-color: white;
 }
-
 /* Alphabet Navigation
 ----------------------------------------------------- */
 div#alphanav {
-    background-color: #EAEEF4;
+    background-color: #EEE;
 }
 div#alphanav ul {
     list-style: none;
@@ -198,7 +196,7 @@ div#alphanav ul li a {
 div#alphanav ul li a:hover {
     text-decoration: none;
     background-color: black;
-    color: #FFF;
+    color: white;
 }
 
 /* Main Table
@@ -214,18 +212,18 @@ h3 + table.infolist {
 }
 table tr th {
     text-align: left;
-    background-color: #EAEEF4;
-    border-top: solid 1px #7CA3DD;
-    border-bottom: solid 1px #7CA3DD;
+    background-color: #EEE;
+    border-top: solid 1px #999;
+    border-bottom: solid 1px #999;
 }
 table tr th:first-child {
-    border-left: solid 1px #7CA3DD;
+    border-left: solid 1px #999;
 }
 table tr th:last-child {
-    border-right: solid 1px #7CA3DD;
+    border-right: solid 1px #999;
 }
 table.primobjlist tr th {
-    background-color: #BFD0EA;
+    background-color: #CCC;
 }
 table td, table th {
     vertical-align: top;
@@ -241,7 +239,7 @@ table.primobjlist tr a {
     display: block; /* make whole td clickable */
 }
 table.primobjlist tr.BeginLetter td, table.primobjlist tr.BeginSurname td {
-    border-top: solid 1px #BFD0EA;
+    border-top: solid 1px #CCC;
 }
 td.ColumnLetter, td.ColumnRowLabel {
     font-weight: bold;
@@ -256,11 +254,11 @@ table.infolist tr td ol {
 #parents table.infolist td.ColumnAttribute,
 #families table.infolist td.ColumnType,
 #families table.infolist td.ColumnAttribute {
-    color: #204D91;
+    color: #555;
 }
 /* div summaryarea is missing for events, sources and repos! */
 h3 + table.infolist td.ColumnAttribute {
-    color: #204D91;
+    color: #555;
 }
 table.primobjlist td.ColumnParents span.mother:before {
     content: "+ ";
@@ -270,72 +268,38 @@ table.primobjlist td.ColumnParents span.mother:before {
 ----------------------------------------------------- */
 table#SortByName td.ColumnSurname, table#SortByName th.ColumnSurname,
 table#SortByCount td.ColumnQuantity, table#SortByCount th.ColumnQuantity {
-    background-color: #EAEEF4;
-}
-table#SortByName td.ColumnSurname a[href]:hover {
-    background-color: #BFD0EA;
-}
-/* make the whole cell light up on hover not just the a. */
-table#SortByName td.ColumnSurname,
-table#SortByName th.ColumnSurname,
-table#SortByName th.ColumnQuantity {
-    padding-left: 0px;
-}
-table#SortByName td.ColumnSurname > a,
-table#SortByName th.ColumnSurname > a,
-table#SortByName th.ColumnQuantity > a {
-    padding-left: 1ex;
+    background-color: #EEE;
 }
 table#SortByName thead th.ColumnSurname a:after,
 table#SortByCount thead th.ColumnQuantity a:after {
     content: " \2193";
 }
 table.surname td.ColumnName {
-    background-color: #EAEEF4;
-}
-table.surname td.ColumnName a[href]:hover {
-    background-color: #BFD0EA;
-}
-/* make the whole cell light up on hover not just the a. */
-table.surname td.ColumnName {
-    padding-left: 0px;
-}
-table.surname td.ColumnName > a {
-    padding-left: 15px;
+    background-color: #EEE;
 }
 
 /* Individuals
 ----------------------------------------------------- */
 table.IndividualList td.ColumnSurname {
-    background-color: #EAEEF4;
+    background-color: #EEE;
 }
 
 /* Places
 ----------------------------------------------------- */
 #Places table.infolist td.ColumnName {
-    background-color: #EAEEF4;
-}
-#Places table.infolist td.ColumnName a[href]:hover {
-    background-color: #BFD0EA;
-}
-/* make the whole cell light up on hover not just the a. */
-#Places table.infolist td.ColumnName {
-    padding-left: 0px;
-}
-#Places table.infolist td.ColumnName > a {
-    padding-left: 1ex;
+    background-color: #EEE;
 }
 
 /* Events
 ----------------------------------------------------- */
 #EventList table.infolist tr.BeginType td {
-    border-top:dashed 1px #BFD0EA;
+    border-top:dashed 1px #CCC;
 }
 #EventList table.infolist tr.BeginLetter td {
-    border-top:solid 1px #BFD0EA;
+    border-top:solid 1px #CCC;
 }
 #EventList table.infolist td.ColumnType {
-    background-color: #EAEEF4;
+    background-color: #EEE;
 }
 #EventList td.ColumnPerson a {
     display: inline;
@@ -369,12 +333,9 @@ table.IndividualList td.ColumnSurname {
 }
 #GalleryNav a {
     font-weight: bold;
-    background-color: #EAEEF4;
-    border: solid 1px #7CA3DD;
+    background-color: #EEE;
+    border: solid 1px #999;
     margin: 1em;
-}
-#GalleryNav a:hover {
-    background-color: #BFD0EA;
 }
 #GalleryNav a#Previous {
     padding: .4em .7em .3em .7em;
@@ -395,7 +356,7 @@ table.IndividualList td.ColumnSurname {
 #GalleryDisplay img {
     margin: 0px auto;
     display: block;
-    border: solid 1px #7CA3DD;
+    border: solid 1px #999;
 }
 #GalleryDetail h3 {
     text-align: center;
@@ -413,15 +374,15 @@ div#SourceDetail {
     overflow: hidden;
 }
 #Contact #summaryarea {
-    width: 40em;
+    width: 50em;
     margin: 2em auto;
     padding: 3em;
-    background-color: #EAEEF4;
-    border: solid 1px #7CA3DD;
+    background-color: #EEE;
+    border: solid 1px #999;
 }
 #Contact img {
     float: right;
-    border: solid 1px #7CA3DD;
+    border: solid 1px #999;
 }
 #Contact #researcher, #Contact #researcher h3 {
     font-size: larger;
@@ -429,10 +390,6 @@ div#SourceDetail {
 }
 #Contact #streetaddress, #Contact #locality, #Contact #email {
     display: block;
-}
-#Contact #locality, #Contact #city, #Contact #state, #Contact #postalcode,
-#Contact #country {
-    white-space: nowrap;
 }
 #Contact #city:after {
     content: ",";
@@ -497,7 +454,7 @@ div#families table.attrlist td.ColumnType {
      *          of 15 px. */
 }
 #indivgallery img {
-    border: solid 1px #7CA3DD;
+    border: solid 1px #999;
 }
 #indivgallery span {
 /* ## remove this line and the comment markers from the line below to hide description in Indivifual Gallery
@@ -561,11 +518,11 @@ a.familymap {
 #footer {
     clear: both;
     padding-top: 1em;
-    background-color: #BFD0EA;
-    border-top: solid 1px #204D91;
+    background-color: #CCC;
+    border-top: solid 1px #555;
 }
 #footer > * {
-    background-color: #EAEEF4;
+    background-color: #EEE;
 }
 #footer p#createdate {
     float: left;
@@ -580,14 +537,11 @@ a.familymap {
     text-align: right;
     padding-right: 15px;
 }
-#footer a[href]:hover {
-    background-color: #BFD0EA;
-}
 
 /* Overwritten
 ----------------------------------------------------- */
 body#FamilyMap {
-    background-color: #EAEEF4 ! important;
+    background-color: #EEE ! important;
 }
 
 /* Calendar Styles
@@ -603,7 +557,7 @@ table.calendar {
 .calendar thead th.monthName {
     font-size: xx-large;
     font-weight: normal;
-    background-color: #FFF;
+    background-color: white;
     border-bottom-style: none;
     padding-top: 1em;
 }
@@ -614,13 +568,10 @@ table.calendar {
     float: right;
     margin: -1em 15px 0px 0px;
     font-weight: bold;
-    color: #7CA3DD;
-}
-#CreatorInfo a[href]:hover {
-    background-color: #BFD0EA;
+    color: #999;
 }
 .calendar tfoot tr td {
-    border-top: solid 4px #7CA3DD;
+    border-top: solid 4px #999;
     vertical-align: middle;
 }
 
@@ -630,8 +581,8 @@ table.calendar {
     width: 1.8em;
     font-size: large;
     text-align: center;
-    background-color: #BFD0EA;
-    color: #204D91;
+    background-color: #CCC;
+    color: #555;
 }
 
 /* Calendar : Date Container */
@@ -639,8 +590,8 @@ table.calendar {
     padding: 0px 0px 0px 1ex;
     border-width: 1px 0px 0px 1px;
     border-style: solid;
-    border-color: #BFD0EA;
-    background-color: #FFF;
+    border-color: #CCC;
+    background-color: #EEE;
 }
 .calendar td:first-child {
     border-left-style: none;
@@ -657,28 +608,21 @@ table.calendar {
     padding: 0px;
 }
 .calendar td ul li {
-    border-top: dashed 1px #BFD0EA;
+    border-top: dashed 1px #CCC;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
 }
 .calendar td ul li:first-child {
     border-style: none;
 }
-.calendar td ul a[href]:hover {
-    background-color: #BFD0EA;
-}
 
 /* Calendar : Birthday, Anniversary, Highlight */
-.calendar td ul li em {
-    font-style: normal;
-    color: #7CA3DD;
-}
 .calendar td.highlight {
-    background-color: #EAEEF4;
+    background-color: white;
 }
 .calendar td.highlight div.date {
     color: black;
-    background-color: #BFD0EA;
+    background-color: #CCC;
 }
 
 /* Calendar : Previous-Next Month */
@@ -686,8 +630,8 @@ table.calendar {
 .calendar td.next,
 .calendar td.previous div.date,
 .calendar td.next div.date {
-    color: #BFD0EA;
-    background-color: #FFF;
+    color: #CCC;
+    background-color: #EEE;
 }
 
 /* Calendar : Full Year */
