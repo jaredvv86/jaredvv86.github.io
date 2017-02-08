@@ -15,42 +15,31 @@
 <script deter="deter" style="width =100%; height =100%;" type="text/javascript">
 
   OpenLayers.Lang.setCode("");
-  var map;
-
-  var tracelife = [
-    [3.50671570, 51.37933440],
-    [3.50671570, 51.37933440],
-    [3.50671570, 51.37933440],
-    [3.50671570, 51.37933440],
-    [3.50671570, 51.37933440],
-    [3.50671570, 51.37933440]
-  ];
 
   function initialize(){
-    map = new OpenLayers.Map('map_canvas');
+    var map = new OpenLayers.Map('map_canvas');
 
-    var wms = new OpenLayers.Layer.WMS(
-      "OpenLayers WMS",
-      "http://vmap0.tiles.osgeo.org/wms/vmap0",
-      {'layers':'basic'});
-    map.addLayer(wms);
-
-    map.setCenter(new OpenLayers.LonLat(3.50671570, 51.37933500), 6);
+    var osm = new OpenLayers.Layer.OSM()
+    map.addLayer(osm);
+    
+    var lonLat = new OpenLayers.LonLat(3.50671570, 51.37933440)
+        .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+        );
+    var zoom =16;
+    
+    map.setCenter(lonLat, zoom);
 
     var markers = new OpenLayers.Layer.Markers("Markers");
+    markers.addMarker(new OpenLayers.Marker(lonLat));
     map.addLayer(markers);
 
-    addMarkers(markers, map);
-  }
+    // add overview control
+    map.addControl(new OpenLayers.Control.OverviewMap());
 
-  function addMarkers(markers, map) {
-    for (var i = 0; i < tracelife.length; i++) {
-      var location = tracelife[i];
-
-      marker = new OpenLayers.Marker(new OpenLayers.LonLat(location[0], location[1]));
-      markers.addMarker(marker); 
-      map.addControl(new OpenLayers.Control.LayerSwitcher());
-    }
+    // add a layer switcher
+    map.addControl(new OpenLayers.Control.LayerSwitcher());
   }
 </script>
 </head>
@@ -78,7 +67,7 @@
 		</div>
 	</div>
 	<div class="content" id="FamilyMapDetail">
-		<h3>Tracking Willemson, Francina</h3>
+		<h3>Tracking Haak, Maria</h3>
 		<p id="description">
 		This map page represents that person and any descendants with all of their event/ places. If you place your mouse over the marker it will display the place name. The markers and the Reference list are sorted in date order (if any?). Clicking on a place&#8217;s name in the Reference section will take you to that place&#8217;s page.
 		</p>
@@ -96,34 +85,9 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td class="ColumnDate">1795-11-15</td>
+						<td class="ColumnDate">1887-04-25</td>
 						<td class="ColumnPlace"><a href="../../../plc/4/1/d7ddd4ab15f149dba669caa4714.html" title="Groede , Zeeland, Netherlands">Groede , Zeeland, Netherlands</a></td>
 						<td class="ColumnType">Birth</td>
-					</tr>
-					<tr>
-						<td class="ColumnDate">1797-08-20</td>
-						<td class="ColumnPlace"><a href="../../../plc/4/1/d7ddd4ab15f149dba669caa4714.html" title="Groede , Zeeland, Netherlands">Groede , Zeeland, Netherlands</a></td>
-						<td class="ColumnType">Birth</td>
-					</tr>
-					<tr>
-						<td class="ColumnDate">1820-05-06</td>
-						<td class="ColumnPlace"><a href="../../../plc/4/1/d7ddd4ab15f149dba669caa4714.html" title="Groede , Zeeland, Netherlands">Groede , Zeeland, Netherlands</a></td>
-						<td class="ColumnType">Marriage</td>
-					</tr>
-					<tr>
-						<td class="ColumnDate">1821-03-20</td>
-						<td class="ColumnPlace"><a href="../../../plc/4/1/d7ddd4ab15f149dba669caa4714.html" title="Groede , Zeeland, Netherlands">Groede , Zeeland, Netherlands</a></td>
-						<td class="ColumnType">Birth</td>
-					</tr>
-					<tr>
-						<td class="ColumnDate">1865-05-16</td>
-						<td class="ColumnPlace"><a href="../../../plc/4/1/d7ddd4ab15f149dba669caa4714.html" title="Groede , Zeeland, Netherlands">Groede , Zeeland, Netherlands</a></td>
-						<td class="ColumnType">Death</td>
-					</tr>
-					<tr>
-						<td class="ColumnDate">1875-01-04</td>
-						<td class="ColumnPlace"><a href="../../../plc/4/1/d7ddd4ab15f149dba669caa4714.html" title="Groede , Zeeland, Netherlands">Groede , Zeeland, Netherlands</a></td>
-						<td class="ColumnType">Death</td>
 					</tr>
 				</tbody>
 			</table>
